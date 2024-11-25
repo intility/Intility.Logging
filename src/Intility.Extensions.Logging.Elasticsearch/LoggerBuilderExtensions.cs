@@ -1,5 +1,9 @@
-﻿using Serilog;
-using Serilog.Sinks.Elasticsearch;
+﻿using Elastic.CommonSchema.Serilog;
+using Elastic.Ingest.Elasticsearch;
+using Elastic.Ingest.Elasticsearch.DataStreams;
+using Elastic.Serilog.Sinks;
+using Elastic.Transport;
+using Serilog.Debugging;
 using System;
 using System.Linq;
 
@@ -40,40 +44,48 @@ namespace Intility.Extensions.Logging
 
             var username = elasticConfig["Username"];
             var password = elasticConfig["Password"];
+            var llmPolicy = elasticConfig["LLMPolicy"];
             var indexFormat = elasticConfig["IndexFormat"];
             var versionString = elasticConfig["Version"];
 
             if (string.IsNullOrWhiteSpace(indexFormat))
             {
-                throw new Exception("Failed to initialize Elasticsearch sink", 
+                throw new Exception("Failed to initialize Elasticsearch sink",
                     new ArgumentException($"missing elastic config: {configSection}:IndexFormat"));
             }
 
             var endpoints = elasticEndpoints.Split(',')
                 .Select(endpoint => new Uri(endpoint));
 
-            var versionFormat = string.IsNullOrWhiteSpace(versionString)
-                ? AutoRegisterTemplateVersion.ESv7
-                : Enum.Parse<AutoRegisterTemplateVersion>(versionString);
 
-            var options = new ElasticsearchSinkOptions(endpoints)
+            foreach (var endpoint in endpoints)
             {
-                TypeName = "logevent",
-                IndexFormat = indexFormat,
-                NumberOfShards = 1,
-                NumberOfReplicas = 1,
-                AutoRegisterTemplate = true,
-                AutoRegisterTemplateVersion = versionFormat
-            };
+                var settings = new TransportConfiguration(endpoint)
+                    .Authentication(new BasicAuthentication(username, password));
 
-            if (!string.IsNullOrWhiteSpace(username) && !string.IsNullOrWhiteSpace(password))
-            {
-                options.ModifyConnectionSettings = c => c.BasicAuthentication(username, password);
+                var transport = new DistributedTransport(settings);
+                var sinkOptions = new ElasticsearchSinkOptions(transport)
+                {
+                    DataStream = new DataStreamName(indexFormat),
+                    BootstrapMethod = BootstrapMethod.Failure,
+                    ChannelDiagnosticsCallback = channel => {
+                        SelfLog.WriteLine(
+                            $"Failure={channel.PublishSuccess}, " +
+                            $"Message={channel}, " +
+                            $"Exception={channel.ObservedException}"
+                            ); 
+                    },
+                    TextFormatting = new EcsTextFormatterConfiguration()
+                };
+
+                if(!string.IsNullOrWhiteSpace(llmPolicy))
+                {
+                    sinkOptions.IlmPolicy = llmPolicy;
+                }
+
+                builder.Configuration.WriteTo.Elasticsearch(sinkOptions);
             }
 
-            configure?.Invoke(options);
-
-            builder.Configuration.WriteTo.Elasticsearch(options);
             return builder;
         }
     }

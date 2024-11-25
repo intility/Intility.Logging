@@ -17,8 +17,7 @@ namespace WebSample
                 {
                     logging.UseDefaultEnrichers()
                         .UseElasticsearch()
-                        .UseSentry()
-                        .UseDynatrace();
+                        .UseSentry();
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {

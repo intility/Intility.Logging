@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Intility.Extensions.Logging.Dynatrace\Intility.Extensions.Logging.Dynatrace.csproj" />
     <ProjectReference Include="..\..\src\Intility.Extensions.Logging.Elasticsearch\Intility.Extensions.Logging.Elasticsearch.csproj" />
     <ProjectReference Include="..\..\src\Intility.Extensions.Logging.Sentry\Intility.Extensions.Logging.Sentry.csproj" />
     <ProjectReference Include="..\..\src\Intility.Logging.AspNetCore\Intility.Logging.AspNetCore.csproj" />
