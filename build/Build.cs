@@ -24,7 +24,7 @@ class Build : NukeBuild
     ///   - Microsoft VisualStudio     https://nuke.build/visualstudio
     ///   - Microsoft VSCode           https://nuke.build/vscode
 
-    public static int Main () => Execute<Build>(x => x.Compile);
+    public static int Main() => Execute<Build>(x => x.Compile);
 
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
@@ -37,7 +37,7 @@ class Build : NukeBuild
 
     [Solution] readonly Solution Solution;
     [GitRepository] readonly GitRepository GitRepository;
-    [GitVersion(NoFetch = true, Framework = "net6.0")] readonly GitVersion GitVersion;
+    [GitVersion(NoFetch = true, Framework = "net9.0")] readonly GitVersion GitVersion;
 
     AbsolutePath SourceDirectory => RootDirectory / "src";
     AbsolutePath TestsDirectory => RootDirectory / "tests";
@@ -90,7 +90,7 @@ class Build : NukeBuild
         .DependsOn(Pack)
         .Requires(() => NugetApiKey)
         .Requires(() => PackageSource)
-        .Executes(() => 
+        .Executes(() =>
         {
             DotNetNuGetPush(s => s
                 .SetTargetPath(OutputDirectory / $"*.nupkg")

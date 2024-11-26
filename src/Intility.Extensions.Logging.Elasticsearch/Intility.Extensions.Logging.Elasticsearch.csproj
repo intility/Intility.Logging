@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+		<TargetFrameworks>net9.0;net8.0</TargetFrameworks>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -19,15 +19,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Serilog.Sinks.Elasticsearch" Version="9.0.3" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<ProjectReference Include="..\Intility.Extensions.Logging\Intility.Extensions.Logging.csproj" />
 	</ItemGroup>
 
   <ItemGroup>
     <None Include="../../assets/intility-logo.png" Pack="true" Visible="false" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Elastic.Serilog.Sinks" Version="8.12.2" />
   </ItemGroup>
 
 </Project>

@@ -6,8 +6,7 @@ builder.Host.UseIntilityLogging((ctx, logging) =>
 {
     logging.UseDefaultEnrichers()
         .UseElasticsearch()
-        .UseSentry()
-        .UseDynatrace();
+        .UseSentry();
 });
 
 // Add services to the container.

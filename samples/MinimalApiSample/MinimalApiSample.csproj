@@ -1,14 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-    <ProjectReference Include="..\..\src\Intility.Extensions.Logging.Dynatrace\Intility.Extensions.Logging.Dynatrace.csproj" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.0.0" />
 	  <ProjectReference Include="..\..\src\Intility.Extensions.Logging.Elasticsearch\Intility.Extensions.Logging.Elasticsearch.csproj" />
 	  <ProjectReference Include="..\..\src\Intility.Extensions.Logging.Sentry\Intility.Extensions.Logging.Sentry.csproj" />
 	  <ProjectReference Include="..\..\src\Intility.Logging.AspNetCore\Intility.Logging.AspNetCore.csproj" />

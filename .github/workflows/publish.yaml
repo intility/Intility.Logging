@@ -15,10 +15,10 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Setup .NET 8
+    - name: Setup .NET 9
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.*
+        dotnet-version: 9.0.*
 
     - name: Publish to NuGet with Nuke
       run: ./build.sh push --nuget-api-key ${{ secrets.NUGET_API_KEY }}
