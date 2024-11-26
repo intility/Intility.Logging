@@ -46,7 +46,6 @@ namespace Intility.Extensions.Logging
             var password = elasticConfig["Password"];
             var llmPolicy = elasticConfig["LLMPolicy"];
             var indexFormat = elasticConfig["IndexFormat"];
-            var versionString = elasticConfig["Version"];
 
             if (string.IsNullOrWhiteSpace(indexFormat))
             {
