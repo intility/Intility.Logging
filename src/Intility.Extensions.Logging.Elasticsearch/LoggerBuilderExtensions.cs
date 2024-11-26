@@ -47,15 +47,27 @@ namespace Intility.Extensions.Logging
             var llmPolicy = elasticConfig["LLMPolicy"];
             var indexFormat = elasticConfig["IndexFormat"];
 
+            var dataSet = elasticConfig["DataSet"];
+            var namespaceName = elasticConfig["Namespace"];
+
             if (string.IsNullOrWhiteSpace(indexFormat))
             {
                 throw new Exception("Failed to initialize Elasticsearch sink",
                     new ArgumentException($"missing elastic config: {configSection}:IndexFormat"));
             }
 
+            if (string.IsNullOrWhiteSpace(dataSet))
+            {
+                dataSet = "generic";
+            }
+
+            if (string.IsNullOrWhiteSpace(namespaceName))
+            {
+                namespaceName = "default";
+            }
+
             var endpoints = elasticEndpoints.Split(',')
                 .Select(endpoint => new Uri(endpoint));
-
 
             foreach (var endpoint in endpoints)
             {
