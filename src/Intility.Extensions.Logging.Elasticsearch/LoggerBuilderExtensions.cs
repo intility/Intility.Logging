@@ -47,23 +47,13 @@ namespace Intility.Extensions.Logging
             var llmPolicy = elasticConfig["LLMPolicy"];
             var indexFormat = elasticConfig["IndexFormat"];
 
-            var dataSet = elasticConfig["DataSet"];
-            var namespaceName = elasticConfig["Namespace"];
+            var dataSet = string.IsNullOrWhiteSpace(elasticConfig["DataSet"]) ? "generic" : elasticConfig["DataSet"];
+            var namespaceName = string.IsNullOrWhiteSpace(elasticConfig["Namespace"]) ? "default" : elasticConfig["Namespace"];
 
             if (string.IsNullOrWhiteSpace(indexFormat))
             {
                 throw new Exception("Failed to initialize Elasticsearch sink",
                     new ArgumentException($"missing elastic config: {configSection}:IndexFormat"));
-            }
-
-            if (string.IsNullOrWhiteSpace(dataSet))
-            {
-                dataSet = "generic";
-            }
-
-            if (string.IsNullOrWhiteSpace(namespaceName))
-            {
-                namespaceName = "default";
             }
 
             var endpoints = elasticEndpoints.Split(',')
@@ -77,7 +67,7 @@ namespace Intility.Extensions.Logging
                 var transport = new DistributedTransport(settings);
                 var sinkOptions = new ElasticsearchSinkOptions(transport)
                 {
-                    DataStream = new DataStreamName(indexFormat),
+                    DataStream = new DataStreamName(indexFormat, dataSet, namespaceName),
                     BootstrapMethod = BootstrapMethod.Failure,
                     ChannelDiagnosticsCallback = channel => {
                         SelfLog.WriteLine(
