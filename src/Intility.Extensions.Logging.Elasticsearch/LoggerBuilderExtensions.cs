@@ -3,6 +3,7 @@ using Elastic.Ingest.Elasticsearch;
 using Elastic.Ingest.Elasticsearch.DataStreams;
 using Elastic.Serilog.Sinks;
 using Elastic.Transport;
+using Microsoft.Extensions.Options;
 using Serilog.Debugging;
 using System;
 using System.Linq;
@@ -84,6 +85,7 @@ namespace Intility.Extensions.Logging
                     sinkOptions.IlmPolicy = llmPolicy;
                 }
 
+                configure?.Invoke(sinkOptions);
                 builder.Configuration.WriteTo.Elasticsearch(sinkOptions);
             }
 
