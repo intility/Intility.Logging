@@ -69,7 +69,7 @@ namespace Intility.Extensions.Logging
                 var sinkOptions = new ElasticsearchSinkOptions(transport)
                 {
                     DataStream = new DataStreamName(indexFormat, dataSet, namespaceName),
-                    BootstrapMethod = BootstrapMethod.Failure,
+                    BootstrapMethod = BootstrapMethod.Silent,
                     ChannelDiagnosticsCallback = channel => {
                         SelfLog.WriteLine(
                             $"Failure={channel.PublishSuccess}, " +
