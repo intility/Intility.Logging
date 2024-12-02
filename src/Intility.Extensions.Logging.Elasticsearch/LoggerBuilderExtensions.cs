@@ -63,7 +63,9 @@ namespace Intility.Extensions.Logging
             foreach (var endpoint in endpoints)
             {
                 var settings = new TransportConfiguration(endpoint)
-                    .Authentication(new BasicAuthentication(username, password));
+                {
+                    Authentication = new BasicAuthentication(username, password),
+                };
 
                 var transport = new DistributedTransport(settings);
                 var sinkOptions = new ElasticsearchSinkOptions(transport)
