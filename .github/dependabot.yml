@@ -16,31 +16,16 @@ updates:
       time: "09:00"
       timezone: "Europe/Oslo"
       
-  - package-ecosystem: "nuget"
-    directory: "/src/Intility.Extensions.Logging"
+  - package-ecosystem: "nuget" 
+    directory: "/src" 
     schedule:
       interval: "monthly"
       time: "09:00"
       timezone: "Europe/Oslo"
-      
-  - package-ecosystem: "nuget"
-    directory: "/src/Intility.Logging.AspNetCore"
-    schedule:
-      interval: "monthly"
-      time: "09:00"
-      timezone: "Europe/Oslo"
-      
-  - package-ecosystem: "nuget"
-    directory: "/src/Intility.Extensions.Logging.Sentry"
-    schedule:
-      interval: "monthly"
-      time: "09:00"
-      timezone: "Europe/Oslo"
-      
-  - package-ecosystem: "nuget"
-    directory: "/src/Intility.Extensions.Logging.Elasticsearch"
-    schedule:
-      interval: "monthly"
-      time: "09:00"
-      timezone: "Europe/Oslo"
+    commit-message:
+      prefix: "build:"
+    groups:
+      all:
+        patterns:
+          - "*"
       
