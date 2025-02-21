@@ -31,7 +31,6 @@ jobs:
         with:
           sep-tags: ";"
           tags: |
-            type=schedule
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
