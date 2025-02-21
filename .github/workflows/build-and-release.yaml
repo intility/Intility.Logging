@@ -36,7 +36,7 @@ jobs:
             type=semver,pattern={{version}}
 
       - name: Pack .NET project
-        run: dotnet pack src/Intility.Logging -o Intility.Logging/output --no-build --property:TreatWarningsAsErrors=true --property:Version=${{ steps.meta.outputs.tags }}
+        run: dotnet pack Intility.Logging.sln -o Intility.Logging/output --no-build --property:TreatWarningsAsErrors=true --property:Version=${{ steps.meta.outputs.tags }}
 
       - name: Publish to NuGet
         run: dotnet nuget push Intility.Logging/output/*.nupkg --skip-duplicate --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
