@@ -37,7 +37,7 @@ jobs:
 
       - name: Pack .NET project
         if: github.event_name != 'pull_request'
-        run: dotnet pack Intility.Logging.sln -o Intility.Logging/output --no-build --property:TreatWarningsAsErrors=true --property:Version=${{ steps.meta.outputs.tags }}
+        run: dotnet pack Intility.Logging.sln -o Intility.Logging/output --property:Version=${{ steps.meta.outputs.tags }}
 
       - name: Publish to NuGet
         if: github.event_name != 'pull_request'
