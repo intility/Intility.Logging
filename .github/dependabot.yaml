@@ -10,7 +10,7 @@ updates:
       timezone: "Europe/Oslo"
 
   - package-ecosystem: "nuget"
-    directory: "/src"
+    directory: "/"
     schedule:
       interval: "monthly"
       time: "09:00"
