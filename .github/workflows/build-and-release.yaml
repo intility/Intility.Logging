@@ -1,4 +1,4 @@
-name: Package Distribution
+name: Build and release
 
 on:
   push:
