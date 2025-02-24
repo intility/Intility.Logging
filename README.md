@@ -7,11 +7,11 @@
 
 <p align="center">
 <a href="https://github.com/Intility/Intility.Logging/actions">
-    <img alt="compile workflow" src="https://github.com/Intility/Intility.Logging/actions/workflows/compile.yaml/badge.svg" style="max-width:100%;">
+    <img alt="compile workflow" src="https://github.com/Intility/Intility.Logging/actions/workflows/build-and-release.yaml/badge.svg" style="max-width:100%;">
 </a>
 
 <a href="https://github.com/Intility/Intility.Logging/actions">
-    <img alt="publish workflow" src="https://github.com/Intility/Intility.Logging/actions/workflows/publish.yaml/badge.svg" style="max-width:100%;">
+    <img alt="publish workflow" src="https://github.com/Intility/Intility.Logging/actions/workflows/build.yaml/badge.svg" style="max-width:100%;">
 </a>
 
 <br />
@@ -76,7 +76,6 @@ The base package inclues a Console sink with a format supporting structured logg
     }
   }
 }
-
 ```
 
 ## 🛰️ Addition logging destinations
@@ -121,5 +120,4 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
     "DiagnosticsLevel": "Error"
   }
 }
-
 ```
