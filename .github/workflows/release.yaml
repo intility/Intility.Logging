@@ -27,6 +27,8 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
+          flavor: |
+            latest=false
           sep-tags: ";"
           tags: |
             type=ref,event=branch
