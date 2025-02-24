@@ -7,11 +7,11 @@
 
 <p align="center">
 <a href="https://github.com/Intility/Intility.Logging/actions">
-    <img alt="compile workflow" src="https://github.com/Intility/Intility.Logging/actions/workflows/build-and-release.yaml/badge.svg" style="max-width:100%;">
+    <img alt="Release workflow" src="https://github.com/Intility/Intility.Logging/actions/workflows/build-and-release.yaml/badge.svg" style="max-width:100%;">
 </a>
 
 <a href="https://github.com/Intility/Intility.Logging/actions">
-    <img alt="publish workflow" src="https://github.com/Intility/Intility.Logging/actions/workflows/build.yaml/badge.svg" style="max-width:100%;">
+    <img alt="Build workflow" src="https://github.com/Intility/Intility.Logging/actions/workflows/build.yaml/badge.svg" style="max-width:100%;">
 </a>
 
 <br />
