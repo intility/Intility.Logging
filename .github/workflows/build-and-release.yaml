@@ -4,9 +4,6 @@ on:
   push:
     tags:
       - v*
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
@@ -28,7 +25,6 @@ jobs:
 
       - name: Docker meta
         id: meta
-        if: github.event_name != 'pull_request'
         uses: docker/metadata-action@v5
         with:
           sep-tags: ";"
@@ -37,9 +33,7 @@ jobs:
             type=semver,pattern={{version}}
 
       - name: Pack .NET project
-        if: github.event_name != 'pull_request'
         run: dotnet pack Intility.Logging.sln -o Intility.Logging/output --property:Version=${{ steps.meta.outputs.tags }}
 
       - name: Publish to NuGet
-        if: github.event_name != 'pull_request'
         run: dotnet nuget push Intility.Logging/output/*.nupkg --skip-duplicate --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
