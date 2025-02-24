@@ -3,7 +3,6 @@ using Elastic.Ingest.Elasticsearch;
 using Elastic.Ingest.Elasticsearch.DataStreams;
 using Elastic.Serilog.Sinks;
 using Elastic.Transport;
-using Microsoft.Extensions.Options;
 using Serilog.Debugging;
 using System;
 using System.Linq;
@@ -72,17 +71,18 @@ namespace Intility.Extensions.Logging
                 {
                     DataStream = new DataStreamName(indexFormat, dataSet, namespaceName),
                     BootstrapMethod = BootstrapMethod.Silent,
-                    ChannelDiagnosticsCallback = channel => {
+                    ChannelDiagnosticsCallback = channel =>
+                    {
                         SelfLog.WriteLine(
                             $"Failure={channel.PublishSuccess}, " +
                             $"Message={channel}, " +
                             $"Exception={channel.ObservedException}"
-                            ); 
+                            );
                     },
                     TextFormatting = new EcsTextFormatterConfiguration()
                 };
 
-                if(!string.IsNullOrWhiteSpace(llmPolicy))
+                if (!string.IsNullOrWhiteSpace(llmPolicy))
                 {
                     sinkOptions.IlmPolicy = llmPolicy;
                 }

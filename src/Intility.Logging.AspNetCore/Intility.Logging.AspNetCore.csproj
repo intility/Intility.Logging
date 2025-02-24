@@ -18,6 +18,7 @@
     <authors>Herman Jensen, Emil Kjelsrud, Thorstein Løkensgard</authors>
     <RepositoryUrl>https://github.com/Intility/Intility.Logging</RepositoryUrl>
     <PackageIcon>intility-logo.png</PackageIcon>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 	</PropertyGroup>
 
 	<ItemGroup>

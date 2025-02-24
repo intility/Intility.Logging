@@ -11,11 +11,12 @@
 		<Description>
 			Enable Sentry instrumentation and logging provider.
 		</Description>
-    <owners>Intility</owners>
-    <Company>Intility</Company>
-    <authors>Herman Jensen, Emil Kjelsrud, Thorstein Løkensgard</authors>
-    <RepositoryUrl>https://github.com/Intility/Intility.Logging</RepositoryUrl>
-    <PackageIcon>intility-logo.png</PackageIcon>
+		<owners>Intility</owners>
+		<Company>Intility</Company>
+		<authors>Herman Jensen, Emil Kjelsrud, Thorstein Løkensgard</authors>
+		<RepositoryUrl>https://github.com/Intility/Intility.Logging</RepositoryUrl>
+		<PackageIcon>intility-logo.png</PackageIcon>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -8,16 +8,9 @@ updates:
       interval: "monthly"
       time: "09:00"
       timezone: "Europe/Oslo"
-      
+
   - package-ecosystem: "nuget"
-    directory: "/build"
-    schedule:
-      interval: "monthly"
-      time: "09:00"
-      timezone: "Europe/Oslo"
-      
-  - package-ecosystem: "nuget" 
-    directory: "/src" 
+    directory: "/"
     schedule:
       interval: "monthly"
       time: "09:00"
@@ -28,4 +21,3 @@ updates:
       all:
         patterns:
           - "*"
-      

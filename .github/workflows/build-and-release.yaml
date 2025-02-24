@@ -1,0 +1,45 @@
+name: Build and release
+
+on:
+  push:
+    tags:
+      - v*
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 9
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.*
+
+      - name: Restore dotnet
+        run: dotnet restore
+
+      - name: Build dotnet
+        run: dotnet build --no-restore
+
+      - name: Docker meta
+        id: meta
+        if: github.event_name != 'pull_request'
+        uses: docker/metadata-action@v5
+        with:
+          sep-tags: ";"
+          tags: |
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+
+      - name: Pack .NET project
+        if: github.event_name != 'pull_request'
+        run: dotnet pack Intility.Logging.sln -o Intility.Logging/output --property:Version=${{ steps.meta.outputs.tags }}
+
+      - name: Publish to NuGet
+        if: github.event_name != 'pull_request'
+        run: dotnet nuget push Intility.Logging/output/*.nupkg --skip-duplicate --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
