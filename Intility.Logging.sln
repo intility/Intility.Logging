@@ -24,10 +24,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkerSample", "samples\Wor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalApiSample", "samples\MinimalApiSample\MinimalApiSample.csproj", "{B647AC70-7210-462A-A43C-6EB4AFCB7ED4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{FEC7C612-B49E-41BD-B29A-9EFC84E92F42}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{B27B120C-6614-4A6D-816F-F8B22DBFE789}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,12 +118,6 @@ Global
 		{B647AC70-7210-462A-A43C-6EB4AFCB7ED4}.Release|x64.Build.0 = Release|Any CPU
 		{B647AC70-7210-462A-A43C-6EB4AFCB7ED4}.Release|x86.ActiveCfg = Release|Any CPU
 		{B647AC70-7210-462A-A43C-6EB4AFCB7ED4}.Release|x86.Build.0 = Release|Any CPU
-		{B27B120C-6614-4A6D-816F-F8B22DBFE789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B27B120C-6614-4A6D-816F-F8B22DBFE789}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{B27B120C-6614-4A6D-816F-F8B22DBFE789}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B27B120C-6614-4A6D-816F-F8B22DBFE789}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B27B120C-6614-4A6D-816F-F8B22DBFE789}.Release|x64.ActiveCfg = Release|Any CPU
-		{B27B120C-6614-4A6D-816F-F8B22DBFE789}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,7 +130,6 @@ Global
 		{2C7C52E9-835F-4051-9A5E-7D985545A795} = {A5767C5D-9A48-4485-8D5E-686F34B2B766}
 		{25312E6A-4BA3-4FDF-AA7C-CF2A10CDA2AA} = {A5767C5D-9A48-4485-8D5E-686F34B2B766}
 		{B647AC70-7210-462A-A43C-6EB4AFCB7ED4} = {A5767C5D-9A48-4485-8D5E-686F34B2B766}
-		{B27B120C-6614-4A6D-816F-F8B22DBFE789} = {FEC7C612-B49E-41BD-B29A-9EFC84E92F42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B2214E5-8A73-47CE-9C97-4910BC331A86}
