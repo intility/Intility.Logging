@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.1" />
 	  <ProjectReference Include="..\..\src\Intility.Extensions.Logging.Elasticsearch\Intility.Extensions.Logging.Elasticsearch.csproj" />
 	  <ProjectReference Include="..\..\src\Intility.Extensions.Logging.Sentry\Intility.Extensions.Logging.Sentry.csproj" />
 	  <ProjectReference Include="..\..\src\Intility.Logging.AspNetCore\Intility.Logging.AspNetCore.csproj" />

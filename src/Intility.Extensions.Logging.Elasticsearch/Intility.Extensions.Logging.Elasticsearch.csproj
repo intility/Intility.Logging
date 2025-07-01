@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Elastic.Serilog.Sinks" Version="8.12.3" />
+    <PackageReference Include="Elastic.Serilog.Sinks" Version="8.18.2" />
   </ItemGroup>
 
 </Project>
