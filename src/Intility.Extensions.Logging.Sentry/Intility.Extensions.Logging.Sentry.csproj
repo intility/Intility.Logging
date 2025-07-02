@@ -20,8 +20,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Sentry.AspNetCore" Version="5.6.0" />
-		<PackageReference Include="Sentry.Serilog" Version="5.6.0" />
+		<PackageReference Include="Sentry.AspNetCore" Version="5.11.2" />
+		<PackageReference Include="Sentry.Serilog" Version="5.11.2" />
 	</ItemGroup>
 
 	<ItemGroup>

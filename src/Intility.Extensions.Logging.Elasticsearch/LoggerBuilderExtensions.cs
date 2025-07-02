@@ -79,7 +79,7 @@ namespace Intility.Extensions.Logging
                             $"Exception={channel.ObservedException}"
                             );
                     },
-                    TextFormatting = new EcsTextFormatterConfiguration()
+                    TextFormatting = new EcsTextFormatterConfiguration<LogEventEcsDocument>() 
                 };
 
                 if (!string.IsNullOrWhiteSpace(llmPolicy))

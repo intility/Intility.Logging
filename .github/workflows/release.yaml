@@ -1,41 +1,25 @@
-name: Build and release
+name: Release Please
 
 on:
   push:
-    tags:
-      - v*
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
-  build:
-    name: Build and release
+  release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup .NET 9
-        uses: actions/setup-dotnet@v4
+      - uses: actions/create-github-app-token@v2
+        id: app-token
         with:
-          dotnet-version: 9.0.*
-
-      - name: Restore dotnet
-        run: dotnet restore
-
-      - name: Build dotnet
-        run: dotnet build --no-restore
-
-      - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v5
+          app-id: ${{ vars.RELEASE_BOT_APP_ID }}
+          private-key: ${{ secrets.RELEASE_BOT_PRIVATE_KEY }}
+      - uses: googleapis/release-please-action@v4
         with:
-          flavor: |
-            latest=false
-          sep-tags: ";"
-          tags: |
-            type=ref,event=branch
-            type=semver,pattern={{version}}
-
-      - name: Pack .NET project
-        run: dotnet pack Intility.Logging.sln -o Intility.Logging/output --property:Version=${{ steps.meta.outputs.tags }}
-
-      - name: Publish to NuGet
-        run: dotnet nuget push Intility.Logging/output/*.nupkg --skip-duplicate --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+          token: ${{ steps.app-token.outputs.token }}
+          config-file: ".github/release-please-config.json"
+          manifest-file: ".github/.release-please-manifest.json"
