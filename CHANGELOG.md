@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.1](https://github.com/intility/Intility.Logging/compare/v3.1.0...v3.1.1) (2025-11-19)
+
+
+### Bug Fixes
+
+* bump serilog enricher azure ([69d3b9b](https://github.com/intility/Intility.Logging/commit/69d3b9b8c1e88769ab357406a1ed7032eb27c11c))
+
 ## [3.1.0](https://github.com/intility/Intility.Logging/compare/v3.0.5...v3.1.0) (2025-11-19)
 
 
