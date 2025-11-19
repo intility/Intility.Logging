@@ -9,13 +9,16 @@ jobs:
   build:
     name: Build and release
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # enable GitHub OIDC token issuance for trusted publishing
+      contents: read    
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
-      - name: Setup .NET 9
-        uses: actions/setup-dotnet@v5
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@d4c94342e560b34958eacfc5d055d21461ed1c5d # v5.0.0
         with:
-          dotnet-version: 9.0.*
+          dotnet-version: 10.0.*
 
       - name: Restore dotnet
         run: dotnet restore
@@ -25,7 +28,7 @@ jobs:
 
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@318604b99e75e41977312d83839a89be02ca4893 # v5.9.0
         with:
           flavor: |
             latest=false

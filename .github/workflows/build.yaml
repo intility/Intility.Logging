@@ -1,4 +1,4 @@
-name: Build
+name: Build And Test
 
 on:
   push:
@@ -9,19 +9,24 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
-      - name: Setup .NET 9
-        uses: actions/setup-dotnet@v5
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@d4c94342e560b34958eacfc5d055d21461ed1c5d # v5.0.0
         with:
-          dotnet-version: 9.0.*
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
 
-      - name: Restore dotnet
+      - name: Install dependencies
         run: dotnet restore
 
-      - name: Build dotnet
+      - name: Build
         run: dotnet build --no-restore
+        
+      - name: Test with the dotnet CLI
+        run: dotnet test --no-restore
