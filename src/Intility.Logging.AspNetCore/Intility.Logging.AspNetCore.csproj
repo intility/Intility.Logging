@@ -25,7 +25,7 @@
 		<PackageReference Include="Serilog.Enrichers.AssemblyName" Version="2.0.0" />
 		<PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
 		<PackageReference Include="Serilog.Enrichers.Memory" Version="1.0.4" />
-    <PackageReference Include="Serilog.Enrichers.AzureClaims" Version="1.1.4" />
+		<PackageReference Include="Serilog.Enrichers.AzureClaims" Version="1.2.1" />
 	</ItemGroup>
 
   <ItemGroup>
