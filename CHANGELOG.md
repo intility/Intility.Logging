@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/intility/Intility.Logging/compare/v3.0.5...v3.1.0) (2025-11-19)
+
+
+### Features
+
+* add .NET 10 support and update all nugets ([bcf8142](https://github.com/intility/Intility.Logging/commit/bcf8142ed09c2401794647a0df14eb9df05b92e5))
+
 ## [3.0.5](https://github.com/intility/Intility.Logging/compare/v3.0.4...v3.0.5) (2025-07-02)
 
 
