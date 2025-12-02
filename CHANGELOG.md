@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.2](https://github.com/intility/Intility.Logging/compare/v3.1.1...v3.1.2) (2025-12-02)
+
+
+### Bug Fixes
+
+* update dependencies from dependabot PRs ([67d85d5](https://github.com/intility/Intility.Logging/commit/67d85d5c34db0080d5e3ccff33d2e330b40ebf38))
+
 ## [3.1.1](https://github.com/intility/Intility.Logging/compare/v3.1.0...v3.1.1) (2025-11-19)
 
 
