@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.1.3](https://github.com/intility/Intility.Logging/compare/v3.1.2...v3.1.3) (2026-01-02)
+
+
+### Bug Fixes
+
+* add explicit permissions to workflows ([28931f8](https://github.com/intility/Intility.Logging/commit/28931f8df3751b09a3d3fe3872dadb321a043f60))
+* bump Sentry SDK to 6.0.0 and update dependencies ([68cf3f8](https://github.com/intility/Intility.Logging/commit/68cf3f8b12c3877c946a1b967c5133168f9f8bdf))
+
 ## [3.1.2](https://github.com/intility/Intility.Logging/compare/v3.1.1...v3.1.2) (2025-12-02)
 
 
