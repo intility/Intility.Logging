@@ -22,7 +22,7 @@
 
   <ItemGroup>
 	<PackageReference Include="Serilog" Version="4.3.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.2" />
   </ItemGroup>
 
   <ItemGroup>
