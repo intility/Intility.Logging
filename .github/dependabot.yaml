@@ -1,23 +1,29 @@
-# https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
-
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-      time: "09:00"
-      timezone: "Europe/Oslo"
-
+  # Check for updates to nuget packages
   - package-ecosystem: "nuget"
     directory: "/"
     schedule:
-      interval: "monthly"
-      time: "09:00"
-      timezone: "Europe/Oslo"
+      interval: 'cron'
+      cronjob: '0 8 * * MON#1'
+      timezone: 'Europe/Oslo'
     commit-message:
       prefix: "build:"
     groups:
-      all:
+      # Group all non-major updates together
+      minor-patch-updates:
         patterns:
           - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # Check for updates to GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: 'cron'
+      cronjob: '0 8 * * MON#1'
+      timezone: 'Europe/Oslo'
+    commit-message:
+      prefix: "ci:"
