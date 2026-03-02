@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.4](https://github.com/intility/Intility.Logging/compare/v3.1.3...v3.1.4) (2026-03-02)
+
+
+### Bug Fixes
+
+* Bump the all group with 10 updates ([#172](https://github.com/intility/Intility.Logging/issues/172)) ([b498619](https://github.com/intility/Intility.Logging/commit/b4986191cf32973113f95205f5632f18d5ae0676))
+
 ## [3.1.3](https://github.com/intility/Intility.Logging/compare/v3.1.2...v3.1.3) (2026-01-02)
 
 
