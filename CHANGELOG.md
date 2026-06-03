@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.1.5](https://github.com/intility/Intility.Logging/compare/v3.1.4...v3.1.5) (2026-06-03)
+
+
+### Bug Fixes
+
+* migrate from sln to slnx ([099bcf0](https://github.com/intility/Intility.Logging/commit/099bcf0662e27f061a59e71c3f35e8d058fa398b))
+* pack slnx instead of deleted sln in publish workflow ([4e93db7](https://github.com/intility/Intility.Logging/commit/4e93db7f0b5bdce7bd12cae3d6cfccb9f57bed4e))
+
 ## [3.1.4](https://github.com/intility/Intility.Logging/compare/v3.1.3...v3.1.4) (2026-03-02)
 
 
