@@ -38,7 +38,7 @@ jobs:
             type=semver,pattern={{version}}
 
       - name: Pack .NET project
-        run: dotnet pack Intility.Logging.sln -o Intility.Logging/output --property:Version=${{ steps.meta.outputs.tags }}
+        run: dotnet pack Intility.Logging.slnx -o Intility.Logging/output --property:Version=${{ steps.meta.outputs.tags }}
 
       # Get a short-lived NuGet API key
       - name: NuGet login
