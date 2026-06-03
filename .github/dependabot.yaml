@@ -5,7 +5,7 @@ updates:
     directory: "/"
     schedule:
       interval: 'cron'
-      cronjob: '0 8 * * MON#1'
+      cronjob: '0 8 * * MON#-1'
       timezone: 'Europe/Oslo'
     commit-message:
       prefix: "build:"
@@ -23,7 +23,7 @@ updates:
     directory: "/"
     schedule:
       interval: 'cron'
-      cronjob: '0 8 * * MON#1'
+      cronjob: '0 8 * * MON#-1'
       timezone: 'Europe/Oslo'
     commit-message:
       prefix: "ci:"
