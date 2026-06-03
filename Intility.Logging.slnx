@@ -1,0 +1,22 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/samples/">
+    <File Path="samples/Directory.Build.props" />
+    <Project Path="samples/MinimalApiSample/MinimalApiSample.csproj" />
+    <Project Path="samples/WebSample/WebSample.csproj" />
+    <Project Path="samples/WorkerSample/WorkerSample.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Intility.Extensions.Logging.Elasticsearch/Intility.Extensions.Logging.Elasticsearch.csproj" />
+    <Project Path="src/Intility.Extensions.Logging.Sentry/Intility.Extensions.Logging.Sentry.csproj" />
+    <Project Path="src/Intility.Extensions.Logging/Intility.Extensions.Logging.csproj" />
+    <Project Path="src/Intility.Logging.AspNetCore/Intility.Logging.AspNetCore.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Intility.Logging.Tests/Intility.Logging.Tests.csproj" />
+  </Folder>
+</Solution>
