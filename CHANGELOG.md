@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.6](https://github.com/intility/Intility.Logging/compare/v3.1.5...v3.1.6) (2026-08-04)
+
+
+### Bug Fixes
+
+* **aspnetcore:** pin System.Security.Cryptography.Xml to patched versions ([6acd35e](https://github.com/intility/Intility.Logging/commit/6acd35e89920b68013986044f931dbccb7003195))
+
 ## [3.1.5](https://github.com/intility/Intility.Logging/compare/v3.1.4...v3.1.5) (2026-06-03)
 
 
