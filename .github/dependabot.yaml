@@ -8,7 +8,7 @@ updates:
       cronjob: '0 8 * * MON#-1'
       timezone: 'Europe/Oslo'
     commit-message:
-      prefix: "build:"
+      prefix: "fix:"
     groups:
       # Group all non-major updates together
       minor-patch-updates:
