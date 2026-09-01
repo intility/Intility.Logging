@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.7](https://github.com/intility/Intility.Logging/compare/v3.1.6...v3.1.7) (2026-09-01)
+
+
+### Bug Fixes
+
+* set fix: prefix for nuget updates and remve framework pinning for System.Security.Cryptography.Xml ([0461672](https://github.com/intility/Intility.Logging/commit/046167237146c856aa5b9bcf24db364429633c79))
+
 ## [3.1.6](https://github.com/intility/Intility.Logging/compare/v3.1.5...v3.1.6) (2026-08-04)
 
 
