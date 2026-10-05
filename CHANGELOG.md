@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.8](https://github.com/intility/Intility.Logging/compare/v3.1.7...v3.1.8) (2026-10-05)
+
+
+### Bug Fixes
+
+* Bump the minor-patch-updates group with 9 updates ([f4e5235](https://github.com/intility/Intility.Logging/commit/f4e523580c6373ca073c9dff88008f34a9657fe0))
+
 ## [3.1.7](https://github.com/intility/Intility.Logging/compare/v3.1.6...v3.1.7) (2026-09-01)
 
 
