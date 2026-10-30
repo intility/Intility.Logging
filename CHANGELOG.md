@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.1.9](https://github.com/intility/Intility.Logging/compare/v3.1.8...v3.1.9) (2026-10-30)
+
+
+### Bug Fixes
+
+* bump Serilog.Enrichers.AzureClaims to 1.2.12 ([6eef142](https://github.com/intility/Intility.Logging/commit/6eef142d6ce8eb848a6178eaedff499ad493766b))
+* Bump the minor-patch-updates group with 10 updates ([bfcd7c0](https://github.com/intility/Intility.Logging/commit/bfcd7c07e10846d63c7d8a4da429992da7c31913))
+* pin System.Security.Cryptography.Pkcs to 10.0.14 ([051ace1](https://github.com/intility/Intility.Logging/commit/051ace15bd843c3a1e1f970fbc9d59dc7d9c33c4))
+
 ## [3.1.8](https://github.com/intility/Intility.Logging/compare/v3.1.7...v3.1.8) (2026-10-05)
 
 
